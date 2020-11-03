@@ -117,9 +117,10 @@ def open(path, convert=False, shuffle=False, copy_index=False, fs_options={}, *a
     :param str or list path: local or absolute path to file, or glob string, or list of paths
     :param convert: convert files to an hdf5 file for optimization, can also be a path
     :param bool shuffle: shuffle converted DataFrame or not
+    :param bool copy_index: copy index when source is read via pandas
+    :param dict fs_options: coming soon...
     :param args: extra arguments for file readers that need it
     :param kwargs: extra keyword arguments
-    :param bool copy_index: copy index when source is read via pandas
     :return: return a DataFrame on success, otherwise None
     :rtype: DataFrame
 
