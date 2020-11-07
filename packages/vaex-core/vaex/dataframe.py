@@ -5867,7 +5867,7 @@ class DataFrameLocal(DataFrame):
         :param progress: {progress}
         :param int chunk_size: {chunk_size_export}, if supported.
         :param bool parallel: {evaluate_parallel}
-        :param dict fs_options: Coming soon...
+        :param dict fs_options: {fs_options}
         :return:
         """
         naked_path, options = vaex.file.split_options(path)
@@ -5894,7 +5894,7 @@ class DataFrameLocal(DataFrame):
         :param int chunk_size: {chunk_size_export}
         :param bool parallel: {evaluate_parallel}
         :param bool reduce_large: If True, convert arrow large_string type to string type
-        :param dict fs_options: Coming soon...
+        :param dict fs_options: {fs_options}
         :return:
         """
         progressbar = vaex.utils.progressbars(progress)
@@ -5929,7 +5929,7 @@ class DataFrameLocal(DataFrame):
         :param progress: {progress}
         :param int chunk_size: {chunk_size_export}
         :param bool parallel: {evaluate_parallel}
-        :param dict fs_options: Coming soon...
+        :param dict fs_options: {fs_options}
         :param **kwargs: Extra keyword arguments to be passed on to py:data:`pyarrow.parquet.ParquetWriter`.
         :return:
         """
@@ -5965,6 +5965,7 @@ class DataFrameLocal(DataFrame):
         :param int chunk_size: {chunk_size_export}
         :param bool parallel: {evaluate_parallel}
         :param int max_workers: Number of workers/threads to use for writing in parallel
+        :param dict fs_options: {fs_options}
         """
         from .itertools import pmap, pwait, buffer, consume
         path1 = str(path).format(i=0, i1=1, i2=2)
