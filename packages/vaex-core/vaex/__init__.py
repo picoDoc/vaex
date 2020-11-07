@@ -106,7 +106,7 @@ def _convert_name(filenames, shuffle=False, suffix=None):
         return base + ".hdf5"
 
 
-def open(path, convert=False, shuffle=False, copy_index=False, fs_options={}, *args, **kwargs):
+def open(path, convert=False, shuffle=False, fs_options={}, *args, **kwargs):
     """Open a DataFrame from file given by path.
 
     Example:
@@ -207,7 +207,7 @@ def open(path, convert=False, shuffle=False, copy_index=False, fs_options={}, *a
                 else:
                     if ext == '.csv' or naked_path.endswith(".csv.bz2"):  # special support for csv.. should probably approach it a different way
                         csv_convert = filename_hdf5 if convert else False
-                        df = from_csv(path, copy_index=copy_index, convert=csv_convert, **kwargs)
+                        df = from_csv(path, convert=csv_convert, **kwargs)
                     else:
                         ds = vaex.dataset.open(path, fs_options=fs_options, *args, **kwargs)
                         if ds is not None:
